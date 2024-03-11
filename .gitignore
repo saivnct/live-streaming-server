@@ -1,0 +1,9 @@
+/auth/node_modules/
+/auth/.idea/
+/hls
+/hls_key
+
+.idea
+.DS_Store
+
+
