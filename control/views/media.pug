@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        block head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            meta(http-equiv='viewport' content='width=device-width, initial-scale=1.0')
+            title Live Stream | #{streamName}
+            link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+            link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+
+    body
+        h2 Live Stream #{streamName}
+        video(id="video", width='800', autoplay="autoplay", controls, muted)
+
+
+
+
+        //BLOCK JS
+        script(src="https://cdn.jsdelivr.net/npm/hls.js@latest")
+
+        script.
+            const streamName = "!{streamName}";
+            const streamUrl = "!{streamUrl}";
+
+        script(src='/js/media.js' type='module')
+

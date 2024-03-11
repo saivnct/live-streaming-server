@@ -4,4 +4,4 @@ docker compose down
 
 docker-compose up -d
 
-docker-compose logs -f rtmp
+docker-compose logs -f rtmp-ingest-server

@@ -1,9 +1,15 @@
-/auth/node_modules/
-/auth/.idea/
+/control/node_modules/
+/control/.idea/
 /hls
 /hls_key
 
-.idea
 .DS_Store
 
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
+### VS Code ###
+.vscode/
