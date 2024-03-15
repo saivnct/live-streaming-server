@@ -1,0 +1,15 @@
+<div class="relative m-4">
+  <div class="flex items-center gap-4">
+    <h2 class="my-4">Live: {{name}}</h2>
+    <mat-form-field class="w-[500px]">
+      <mat-label>Url</mat-label>
+      <input matInput type="text" [(ngModel)]="url">
+    </mat-form-field>
+    <button [disabled]="url==''" class="mb-4"
+            (click)="playVideo()"
+            mat-raised-button color="primary">Live</button>
+  </div>
+  <div class="mx-auto w-full xl:w-1/2 mt-8 mb-16">
+    <app-video-player></app-video-player>
+  </div>
+</div>

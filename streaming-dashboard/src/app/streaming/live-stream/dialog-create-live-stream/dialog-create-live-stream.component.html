@@ -1,0 +1,44 @@
+<div>
+  <h2 mat-dialog-title>
+    @if (data.mode === 'Create') {
+      Create
+    } @else if (data.mode === 'Update') {
+      Update
+    } @else if (data.mode === 'View') {
+      View
+    }
+  </h2>
+  <mat-dialog-content>
+    @if (data.mode === 'Create' || data.mode === 'Update') {
+      <form [formGroup]="form" class="w-full flex flex-col gap-2 items-start">
+        <mat-form-field class="w-full">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Start At</mat-label>
+          <input matInput formControlName="startAt" type="datetime-local" placeholder="Start At">
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>End At</mat-label>
+          <input matInput formControlName="endAt" type="datetime-local" placeholder="End At">
+        </mat-form-field>
+
+        <div class="w-full flex justify-end">
+          <button [disabled]="!form.valid"
+                  (click)="submit()"
+                  mat-raised-button color="primary">Submit</button>
+        </div>
+
+      </form>
+    } @else if (data.mode === 'View') {
+      <div class="w-full flex flex-col gap-2 items-start p-8">
+        <pre>{{ data.liveStream | json }}</pre>
+      </div>
+    }
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="" cdkFocusInitial>Cancel</button>
+  </mat-dialog-actions>
+</div>
